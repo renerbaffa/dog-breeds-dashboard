@@ -10,4 +10,7 @@
     "url": "git+https://github.com/renerbaffa/dog-breeds-dashboard.git"
   },
   "author": "Rener Baffa da Silva (renerbaffa@gmail.com)",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
 }
