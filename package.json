@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Dog Breeds Dashboard",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --colors --progress --inline --hot --env=development --config=webpack/config.js"
   },
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
   },
   "author": "Rener Baffa da Silva (renerbaffa@gmail.com)",
   "devDependencies": {
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
