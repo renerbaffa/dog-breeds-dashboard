@@ -1,0 +1,13 @@
+{
+  "name": "dog-breeds-dashboard",
+  "version": "1.0.0",
+  "description": "Dog Breeds Dashboard",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renerbaffa/dog-breeds-dashboard.git"
+  },
+  "author": "Rener Baffa da Silva (renerbaffa@gmail.com)",
+}
