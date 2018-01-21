@@ -22,7 +22,3 @@ export async function fetchBreeds() {
     return { hasError, breeds };
   }
 }
-
-export default {
-  fetchBreeds,
-};
