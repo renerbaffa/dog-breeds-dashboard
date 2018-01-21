@@ -29,9 +29,16 @@ const config = {
     ],
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js',
+      minChunks: function(module) {
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      },
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(rootDir, 'public', 'index.html'),
-      chunks: ['index'],
+      chunks: ['vendor', 'index'],
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: {
