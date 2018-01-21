@@ -35,6 +35,9 @@ npm|yarn release
 - `redux-devtools-extension` configured to run only on dev environment
 
 ## Features developed
+[] View all breeds
+[] Filter breeds
+[] Check random dog images according to breed selected
 
 ### Automated tests
 - Every single file created in the project has its own testing file which can be found in the same folder level as the source code. Two main extensions were used:
@@ -44,3 +47,7 @@ npm|yarn release
 	1. `enzyme` to render and manipulate rendered React components
 	2. `react-test-renderer` to generate snapshots of dumb/stateless components
 - Total time spent: 6 hours (configuring webpack: ~5 hours, documenting: ~1 hour)
+
+### Architecture details
+- `normalizers` are the files responsible for get raw data and convert it to expected pattern
+- `sources` are the files responsible for request information from backend, decoupling the request code from the actions and components.
