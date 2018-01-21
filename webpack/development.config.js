@@ -43,6 +43,23 @@ const config = {
           'css-loader',
         ],
       },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              camelCase: true,
+              importLoaders: 1,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              modules: true,
+            },
+          },
+          'postcss-loader',
+        ],
+      },
     ],
   },
   plugins: [
