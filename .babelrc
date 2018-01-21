@@ -3,5 +3,10 @@
   "presets" : [
     ["es2015", { "modules": false }],
     "react"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [["env"], "react"]
+    }
+  }
 }
