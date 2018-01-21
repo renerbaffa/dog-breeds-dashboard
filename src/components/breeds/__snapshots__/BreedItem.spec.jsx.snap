@@ -5,7 +5,7 @@ exports[`<BreedItem /> should render correctly 1`] = `
   className="container"
 >
   <div>
-    Lhasa Apso
+    French (Bulldog)
   </div>
 </div>
 `;

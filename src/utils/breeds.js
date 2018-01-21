@@ -1,8 +1,8 @@
-function camelCase(str) {
+export function camelCase(str) {
   return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 }
 
-export default function formatBreedName(breed) {
+export function formatBreedName(breed) {
   let name = breed.name.slice(0);
   name = camelCase(name);
 

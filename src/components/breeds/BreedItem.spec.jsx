@@ -4,12 +4,17 @@ import renderer from 'react-test-renderer';
 
 import BreedItem from './BreedItem';
 
+const BREED = {
+  name: 'french',
+  parentBreed: 'bulldog',
+};
+
 describe('<BreedItem />', () => {
   let component;
   let wrapper;
 
   beforeEach(() => {
-    component = <BreedItem name="Lhasa Apso" />;
+    component = <BreedItem breed={BREED} />;
     wrapper = shallow(component);
   });
 

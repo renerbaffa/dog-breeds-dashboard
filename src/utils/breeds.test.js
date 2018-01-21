@@ -1,4 +1,4 @@
-import formatBreedName from './breeds';
+import { formatBreedName } from './breeds';
 
 describe('formatBreedName util', () => {
   describe('given no parent breed', () => {
