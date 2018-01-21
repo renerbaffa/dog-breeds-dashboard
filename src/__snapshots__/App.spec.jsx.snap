@@ -2,8 +2,21 @@
 
 exports[`<App /> should render 1`] = `
 <div
-  className="app"
+  className="wrapper"
 >
-  Dog Breeds Dashboard
+  <div
+    className="app"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="leftPanel"
+      />
+      <div
+        className="rightPanel"
+      />
+    </div>
+  </div>
 </div>
 `;
