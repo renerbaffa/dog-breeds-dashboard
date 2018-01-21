@@ -2,7 +2,9 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "node": false
+    "node": false,
+    "jest": true
   },
-  "extends": ["airbnb"]
+  "extends": ["airbnb", "plugin:jest/recommended"],
+  "plugins": ["jest"]
 }
