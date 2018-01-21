@@ -1,8 +1,12 @@
-export const INITIAL_STATE = {
-  ids: [],
-  content: {},
-};
+import { UPDATE_BREEDS } from '../actions/breedsActions';
 
-export default function breeds(state = INITIAL_STATE, action = {}) {
-  return state;
+export const INITIAL_STATE = [];
+
+export default function breeds(state = [], action = {}) {
+  switch (action.type) {
+    case UPDATE_BREEDS:
+      return action.payload.breeds;
+    default:
+      return state;
+  }
 }

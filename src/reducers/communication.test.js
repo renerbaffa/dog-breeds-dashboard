@@ -3,10 +3,6 @@ import communication, {
 } from './communication';
 
 import { BREEDS, RETRIEVED, RETRIEVING } from '../constants/communication';
-// import normalizeBreeds from '../normalizers/breeds';
-// import BREEDS_MOCK from '../mocks/Breeds';
-
-// const NORMALIZED_BREEDS = normalizeBreeds(BREEDS_MOCK);
 
 describe('communication reducer', () => {
   let action;
