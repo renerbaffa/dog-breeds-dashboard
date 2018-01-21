@@ -1,7 +1,9 @@
 import React from 'react';
 
+import styles from './App.css';
+
 const App = () => (
-  <div>
+  <div className={styles.app}>
     Dog Breeds Dashboard
   </div>
 );
