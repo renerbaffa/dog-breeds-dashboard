@@ -41,13 +41,15 @@ npm|yarn release
 
 ### Automated tests
 - Every single file created in the project has its own testing file which can be found in the same folder level as the source code. Two main extensions were used:
-	1.  `.spec` files test React Components. In order to guarantee the resulting HTML structure of components the tests were made through snapshots and they do not have logic.
-	2.  `.test` files test `actions`, `reducers`, `sources` and `utils` files. As they have logic the tests were made to guarantee that their behavior did not change (same for smart components or containers).
+  1.  `.spec` files test React Components. In order to guarantee the resulting HTML structure of components the tests were made through snapshots and they do not have logic.
+  2.  `.test` files test `actions`, `reducers`, `sources` and `utils` files. As they have logic the tests were made to guarantee that their behavior did not change (same for smart components or containers).
 - Frameworks used for testing:
-	1. `enzyme` to render and manipulate rendered React components
-	2. `react-test-renderer` to generate snapshots of dumb/stateless components
+  1. `enzyme` to render and manipulate rendered React components
+  2. `react-test-renderer` to generate snapshots of dumb/stateless components
+  3. `axios-mock-adapter` to mock and simulate requests and HTTP responses
 - Total time spent: 6 hours (configuring webpack: ~5 hours, documenting: ~1 hour)
 
 ### Architecture details
+- `communication` redux state were created in order to store loading flags. Those flags are retrieved from meta tag inserted in the action payload (see `reducers/communication`).
 - `normalizers` are the files responsible for get raw data and convert it to expected pattern
 - `sources` are the files responsible for request information from backend, decoupling the request code from the actions and components.
