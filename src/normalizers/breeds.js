@@ -1,3 +1,5 @@
+import Guid from 'guid';
+
 export default function normalizeBreeds(breeds = {}) {
   const data = [];
 
@@ -5,12 +7,14 @@ export default function normalizeBreeds(breeds = {}) {
     if (breeds[breed].length > 0) {
       breeds[breed].forEach((subBreed) => {
         data.push({
+          id: Guid.create().value,
           name: subBreed,
           parentBreed: breed,
         });
       });
     } else {
       data.push({
+        id: Guid.create().value,
         name: breed,
         parentBreed: undefined,
       });

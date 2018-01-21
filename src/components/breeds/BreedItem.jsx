@@ -29,8 +29,9 @@ const BreedItem = ({
 BreedItem.propTypes = {
   className: PropTypes.string,
   breed: PropTypes.shape({
+    id: PropTypes.string,
     name: PropTypes.string,
-    parentBreed: PropTypes.oneOf(undefined, PropTypes.string),
+    parentBreed: PropTypes.string,
   }),
   selected: PropTypes.bool,
 };
@@ -38,6 +39,7 @@ BreedItem.propTypes = {
 BreedItem.defaultProps = {
   className: '',
   breed: {
+    id: '',
     name: '',
     parentBreed: undefined,
   },
