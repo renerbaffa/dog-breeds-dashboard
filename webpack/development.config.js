@@ -35,6 +35,14 @@ const config = {
           emitWarning: true, // force to show errors on console as warning
         },
       },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
     ],
   },
   plugins: [
