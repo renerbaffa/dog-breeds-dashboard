@@ -4,10 +4,16 @@ export default function normalizeBreeds(breeds = {}) {
   Object.keys(breeds).forEach((breed) => {
     if (breeds[breed].length > 0) {
       breeds[breed].forEach((subBreed) => {
-        data.push(subBreed);
+        data.push({
+          name: subBreed,
+          parentBreed: breed,
+        });
       });
     } else {
-      data.push(breed);
+      data.push({
+        name: breed,
+        parentBreed: {},
+      });
     }
   });
 
