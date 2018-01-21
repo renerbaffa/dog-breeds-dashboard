@@ -12,7 +12,7 @@ export default function normalizeBreeds(breeds = {}) {
     } else {
       data.push({
         name: breed,
-        parentBreed: {},
+        parentBreed: undefined,
       });
     }
   });
