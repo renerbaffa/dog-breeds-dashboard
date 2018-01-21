@@ -26,6 +26,15 @@ const config = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      { // eslint load ()
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        enforce: 'pre', // in order to check source files before modified by other loaders
+        options: {
+          emitWarning: true, // force to show errors on console as warning
+        },
+      },
     ],
   },
   plugins: [
