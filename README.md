@@ -31,6 +31,8 @@ npm|yarn release
   - [X] Testing environment
   - [X] Eslint
   - [X] Postcss
+- Using `react-redux` for data storage and `redux-thunk` to allow actions to return functions instead of actions
+- `redux-devtools-extension` configured to run only on dev environment
 
 ## Features developed
 
