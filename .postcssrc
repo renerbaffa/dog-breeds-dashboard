@@ -1,0 +1,15 @@
+{
+  "plugins": {
+    "postcss-import": {
+      path: 'src/'
+    },
+    "postcss-sassy-mixins": {},
+    "postcss-for": {},
+    "postcss-conditionals": {},
+    "postcss-simple-vars": {},
+    "postcss-color-function": {},
+    "postcss-mathjs": {},
+    "postcss-nested": {},
+    "autoprefixer": { "remove": false }
+  }
+}
