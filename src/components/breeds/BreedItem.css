@@ -1,0 +1,21 @@
+.container {
+  padding: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container:last-child {
+  border-bottom: none;
+}
+
+.container:hover {
+  background-color: #e6e6e6;
+}
+
+.container.selected {
+  background-color: #afafaf !important;
+}
