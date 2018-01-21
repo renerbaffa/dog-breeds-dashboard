@@ -27,6 +27,12 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(rootDir, 'public', 'index.html'),
+      chunks: ['index'],
+    }),
+  ],
   devServer: {
     port: 3000,
   },
