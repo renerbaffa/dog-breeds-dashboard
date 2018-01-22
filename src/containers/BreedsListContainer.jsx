@@ -18,7 +18,11 @@ class BreedsListContainer extends Component {
 
     return (
       <div className={styles.container}>
-        <BreedSearchForm searchText={searchText} />
+        <div className={styles.title}>Dog breeds</div>
+        <BreedSearchForm
+          searchText={searchText}
+          onSearchChange={this.handleSearchTextChange}
+        />
         <BreedsList searchText={searchText} />
       </div>
     );
