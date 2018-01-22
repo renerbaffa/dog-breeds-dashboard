@@ -6,7 +6,7 @@ import Input from './Input';
 describe('<Input />', () => {
   it('should render correctly', () => {
     const tree = renderer
-      .create(<Input className="className" value="value" placeholder="Search" value="Search" />)
+      .create(<Input className="className" value="value" placeholder="Search" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

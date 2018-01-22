@@ -4,6 +4,6 @@ exports[`<Input /> should render correctly 1`] = `
 <input
   className="className"
   placeholder="Search"
-  value="Search"
+  value="value"
 />
 `;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BreedsListContainer /> should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div>
+    <form
+      className="SearchForm-form"
+      onSubmit={[Function]}
+    >
+      <input
+        className="SearchForm-input"
+        onChange={[Function]}
+        placeholder="Search..."
+        type="text"
+        value=""
+      />
+      <button
+        className="SearchForm-button main"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+  <BreedsList />
+</div>
+`;
