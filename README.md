@@ -68,5 +68,6 @@ npm|yarn release
 If I had more time, I would consider the following options:
 - Integrate the app with docker in order to provide a more completed solution
 - Adopt Progressive Web App (PWA) concepts
+- Work to improve production build
 - Configure webpack to allow imports relativly from `src/` and not use relative
   - `babel-plugin-module-resolver` and `eslint-import-resolver-babel-module` would help
