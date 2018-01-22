@@ -173,6 +173,21 @@ describe('<DogContainer />', () => {
     });
   });
 
+  describe('on loading more image', () => {
+    beforeEach(() => {
+      wrapper = shallow(<DogContainer
+        onFetchDogImage={() => DOG_IMAGE}
+      />);
+    });
+
+    it('should update dogImage state value', () => {
+      expect(wrapper.state().dogImage).toBeUndefined();
+      return wrapper.instance().handleLoadMore().then(() => {
+        expect(wrapper.state().dogImage).toBe(DOG_IMAGE);
+      });
+    });
+  });
+
   it('should reach 100% of coverage', () => {
     DogContainer.defaultProps.onFetchDogImage(); // running default prop
 

@@ -55,6 +55,8 @@ export class DogContainer extends Component {
       this.setState({ dogImage });
     });
 
+  handleLoadMore = () => this.updateDogImage(this.props.currentBreed);
+
   render() {
     const {
       className,
@@ -93,7 +95,10 @@ export class DogContainer extends Component {
           className={styles.buttonContainer}
           key="dog-container-button"
         >
-          <Button className={styles.button}>
+          <Button
+            className={styles.button}
+            onClick={this.handleLoadMore}
+          >
             <PlusButton className={styles.buttonIcon} />
             Load other image
           </Button>
