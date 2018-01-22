@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { connect } from 'react-redux';
 
 import PlusButton from 'react-icons/lib/fa/plus';
 
 import Button from '../components/shared/Button';
 import Image from '../components/shared/Image';
 
+import { formatBreedName } from '../utils/breeds';
+
 import styles from './DogContainer.css';
 
-const DogContainer = ({ className, title, ...other }) => (
-  <div
-    {...other}
-    className={cx(className, styles.container)}
-  >
+export const DogContainer = ({ className, title }) => (
+  <div className={cx(className, styles.container)}>
     <div className={styles.title}>{title}</div>
     <div className={styles.imageContainer}>
       <Image
@@ -40,4 +40,8 @@ DogContainer.defaultProps = {
   title: 'Please select a breed',
 };
 
-export default DogContainer;
+export default connect(({ breeds, selectedBreed }) => {
+  const currentBreed = breeds.find(breed => breed.id === selectedBreed);
+
+  return ({ title: currentBreed && formatBreedName(currentBreed) });
+})(DogContainer);
