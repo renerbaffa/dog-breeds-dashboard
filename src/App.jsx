@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import BreedsListContainer from './containers/BreedsListContainer';
+import DogContainer from './containers/DogContainer';
 
 import store from './store';
 
@@ -15,7 +16,9 @@ const App = () => (
           <div className={styles.leftPanel}>
             <BreedsListContainer />
           </div>
-          <div className={styles.rightPanel} />
+          <div className={styles.rightPanel}>
+            <DogContainer />
+          </div>
         </div>
       </div>
     </div>
