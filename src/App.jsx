@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import BreedsList from './components/breeds/BreedsList'; // eslint-disable-line
+import BreedsListContainer from './containers/BreedsListContainer';
 
 import store from './store';
 
@@ -13,7 +13,7 @@ const App = () => (
       <div className={styles.app}>
         <div className={styles.container}>
           <div className={styles.leftPanel}>
-            <BreedsList />
+            <BreedsListContainer />
           </div>
           <div className={styles.rightPanel} />
         </div>
