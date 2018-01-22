@@ -21,12 +21,19 @@ describe('fetchBreeds', () => {
         .reply(200, { status: 'success', message: BREEDS });
     });
 
-    it('should return normalized data', () =>
-      fetchBreeds().then((normalizedBreeds) => {
-        expect(normalizedBreeds.breeds)
-          .toEqual(NORMALIZED_BREEDS);
+    it('should return normalized data', () => {
+      const breeds = fetchBreeds();
+
+      breeds.then((normalizedBreeds) => {
+        const newBreeds =
+          normalizedBreeds.breeds.map((breed, index) => ({
+            ...breed,
+            id: NORMALIZED_BREEDS[index].id,
+          }));
+        expect(newBreeds).toEqual(NORMALIZED_BREEDS);
         expect(normalizedBreeds.hasError).toBeFalsy();
-      }));
+      });
+    });
   });
 
   describe('when backend return error', () => {

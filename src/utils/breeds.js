@@ -14,7 +14,7 @@ export function formatBreedName(breed) {
   return name;
 }
 
-export function sortBreedsByFormattedName(breeds = []) {
+export function sortBreedsByFormattedName(breeds) {
   return breeds.sort((a, b) => {
     let toRet = 0;
     const nameA = formatBreedName(a);

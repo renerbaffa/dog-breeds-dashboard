@@ -100,8 +100,8 @@ describe('breed actions', () => {
         action.meta[BREEDS] = RETRIEVED;
         action.payload = { breeds: NORMALIZED_BREEDS };
         return store.dispatch(fetchBreeds()).then(() =>
-          expect(store.getActions()[store.getActions().length - 1])
-            .toEqual(action));
+          expect(store.getActions()[store.getActions().length - 1].payload.breeds)
+            .toHaveLength(NORMALIZED_BREEDS.length));
       });
     });
 

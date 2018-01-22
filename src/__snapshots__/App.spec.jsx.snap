@@ -12,7 +12,11 @@ exports[`<App /> should render 1`] = `
     >
       <div
         className="leftPanel"
-      />
+      >
+        <div
+          className="container"
+        />
+      </div>
       <div
         className="rightPanel"
       />
