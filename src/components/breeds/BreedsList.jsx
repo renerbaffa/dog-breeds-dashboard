@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { fetchBreeds } from '../../actions/breedsActions';
+import { fetchBreeds, setSelectedBreed } from '../../actions/breedsActions';
 
 import {
   filterByFormattedName,
@@ -24,6 +24,7 @@ export class BreedsList extends Component {
     })),
     isLoading: PropTypes.bool,
     onFetchBreeds: PropTypes.func,
+    onSetSelectedBreed: PropTypes.func,
     searchText: PropTypes.string, // eslint-disable-line
   };
 
@@ -31,6 +32,7 @@ export class BreedsList extends Component {
     breeds: [],
     isLoading: false,
     onFetchBreeds: () => {},
+    onSetSelectedBreed: () => {},
     searchText: '',
   };
 
@@ -39,7 +41,7 @@ export class BreedsList extends Component {
   }
 
   render() {
-    const { breeds, isLoading } = this.props;
+    const { breeds, isLoading, onSetSelectedBreed } = this.props;
 
     return (
       <div className={styles.container}>
@@ -48,6 +50,7 @@ export class BreedsList extends Component {
           <BreedItem
             breed={breed}
             key={`breed-${breed.id}`}
+            onClick={() => onSetSelectedBreed(breed.id)}
           />
         ))}
       </div>
@@ -67,5 +70,6 @@ export default connect(
   mapStateToProps,
   {
     onFetchBreeds: fetchBreeds,
+    onSetSelectedBreed: setSelectedBreed,
   },
 )(BreedsList);

@@ -6,6 +6,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
 >
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       American (Terrier)
@@ -13,6 +14,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Australian (Terrier)
@@ -20,6 +22,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Bedlington (Terrier)
@@ -27,6 +30,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Border (Terrier)
@@ -34,6 +38,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Dandie (Terrier)
@@ -41,6 +46,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Fox (Terrier)
@@ -48,6 +54,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Irish (Terrier)
@@ -55,6 +62,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Kerryblue (Terrier)
@@ -62,6 +70,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Lakeland (Terrier)
@@ -69,6 +78,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Norfolk (Terrier)
@@ -76,6 +86,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Norwich (Terrier)
@@ -83,6 +94,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Patterdale (Terrier)
@@ -90,6 +102,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Scottish (Terrier)
@@ -97,6 +110,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Sealyham (Terrier)
@@ -104,6 +118,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Silky (Terrier)
@@ -111,6 +126,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Tibetan (Terrier)
@@ -118,6 +134,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Toy (Terrier)
@@ -125,6 +142,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Westhighland (Terrier)
@@ -132,6 +150,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Wheaten (Terrier)
@@ -139,6 +158,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Yorkshire (Terrier)
@@ -146,6 +166,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Vizsla
@@ -153,6 +174,7 @@ exports[`<BreedsList /> should render correctly 1`] = `
   </div>
   <div
     className="container"
+    onClick={[Function]}
   >
     <div>
       Weimaraner

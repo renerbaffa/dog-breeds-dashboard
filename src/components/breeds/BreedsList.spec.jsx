@@ -8,6 +8,8 @@ import ConnectedBreedsList, {
   BreedsList,
 } from './BreedsList';
 
+import BreedItem from './BreedItem';
+
 import BREEDS_MOCK from '../../mocks/Breeds';
 import normalizeBreeds from '../../normalizers/breeds';
 import { sortBreedsByFormattedName } from '../../utils/breeds';
@@ -21,14 +23,17 @@ const mockStore = configureMockStore(middlewares);
 describe('<BreedsList />', () => {
   let component;
   let onFetchBreeds;
+  let onSetSelectedBreed;
   let wrapper;
 
   beforeEach(() => {
     onFetchBreeds = jest.fn();
+    onSetSelectedBreed = jest.fn();
     component = (
       <BreedsList
         breeds={NORMALIZED_BREEDS}
         onFetchBreeds={onFetchBreeds}
+        onSetSelectedBreed={onSetSelectedBreed}
       />
     );
     wrapper = shallow(component);
@@ -45,6 +50,12 @@ describe('<BreedsList />', () => {
     expect(onFetchBreeds).not.toHaveBeenCalled();
     wrapper.instance().componentDidMount();
     expect(onFetchBreeds).toHaveBeenCalled();
+  });
+
+  it('should call onSetSelectedBreed prop when selecting a breed', () => {
+    const breedId = wrapper.find(BreedItem).at(0).props().breed.id;
+    wrapper.find(BreedItem).at(0).simulate('click');
+    expect(onSetSelectedBreed).toHaveBeenCalledWith(breedId);
   });
 
   describe('providing store', () => {
@@ -74,5 +85,6 @@ describe('<BreedsList />', () => {
 
   it('should reach 100% of coverage', () => {
     BreedsList.defaultProps.onFetchBreeds();
+    BreedsList.defaultProps.onSetSelectedBreed();
   });
 });
