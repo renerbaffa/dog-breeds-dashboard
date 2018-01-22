@@ -1,4 +1,9 @@
-import { camelCase, formatBreedName, sortBreedsByFormattedName } from './breeds';
+import {
+  camelCase,
+  filterByFormattedName,
+  formatBreedName,
+  sortBreedsByFormattedName,
+} from './breeds';
 
 describe('formatBreedName util', () => {
   describe('camelCase', () => {
@@ -32,6 +37,20 @@ describe('formatBreedName util', () => {
       ];
       expect(sortBreedsByFormattedName(breeds)).toEqual([
         { name: 'african' },
+        { name: 'boxer' },
+        { name: 'french', parentBreed: 'bulldog' },
+      ]);
+    });
+  });
+
+  describe('filterByFormattedName', () => {
+    it('should filter breed by formatted name', () => {
+      const breeds = [
+        { name: 'boxer' },
+        { name: 'french', parentBreed: 'bulldog' },
+        { name: 'african' },
+      ];
+      expect(filterByFormattedName(breeds, 'o')).toEqual([
         { name: 'boxer' },
         { name: 'french', parentBreed: 'bulldog' },
       ]);
