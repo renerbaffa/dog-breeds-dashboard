@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 
 import { fetchBreeds } from '../../actions/breedsActions';
 
-import { sortBreedsByFormattedName } from '../../utils/breeds';
+import {
+  filterByFormattedName,
+  sortBreedsByFormattedName,
+} from '../../utils/breeds';
 import { BREEDS, RETRIEVING } from '../../constants/communication';
 
 import BreedItem from './BreedItem';
@@ -21,12 +24,14 @@ export class BreedsList extends Component {
     })),
     isLoading: PropTypes.bool,
     onFetchBreeds: PropTypes.func,
+    searchText: PropTypes.string, // eslint-disable-line
   };
 
   static defaultProps = {
     breeds: [],
     isLoading: false,
     onFetchBreeds: () => {},
+    searchText: '',
   };
 
   componentDidMount() {
@@ -50,10 +55,11 @@ export class BreedsList extends Component {
   }
 }
 
-function mapStateToProps({ breeds, communication }) {
+function mapStateToProps({ breeds, communication }, { searchText }) {
   return {
     isLoading: communication[BREEDS] === RETRIEVING,
-    breeds: sortBreedsByFormattedName(breeds),
+    breeds:
+      sortBreedsByFormattedName(filterByFormattedName(breeds, searchText)),
   };
 }
 

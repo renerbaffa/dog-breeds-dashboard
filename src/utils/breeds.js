@@ -30,7 +30,7 @@ export function sortBreedsByFormattedName(breeds) {
   });
 }
 
-export function filterByFormattedName(breeds, searchText) {
+export function filterByFormattedName(breeds, searchText = '') {
   return breeds.filter(breed =>
-    formatBreedName(breed).indexOf(searchText) >= 0);
+    formatBreedName(breed).toLowerCase().indexOf(searchText.toLowerCase()) >= 0);
 }

@@ -10,8 +10,7 @@ class BreedsListContainer extends Component {
     searchText: '',
   }
 
-  handleSearchTextChange = event =>
-    this.setState({ searchText: event.target.value });
+  handleSearchTextChange = searchText => this.setState({ searchText });
 
   render() {
     const { searchText } = this.state;
@@ -21,7 +20,7 @@ class BreedsListContainer extends Component {
         <div className={styles.title}>Dog breeds</div>
         <BreedSearchForm
           searchText={searchText}
-          onSearchChange={this.handleSearchTextChange}
+          onFilter={this.handleSearchTextChange}
         />
         <BreedsList searchText={searchText} />
       </div>

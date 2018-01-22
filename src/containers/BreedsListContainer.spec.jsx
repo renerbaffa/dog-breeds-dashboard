@@ -29,7 +29,7 @@ describe('<BreedsListContainer />', () => {
     expect(wrapper.state().searchText).toBe('');
     wrapper
       .instance()
-      .handleSearchTextChange({ target: { value: newValue } });
+      .handleSearchTextChange(newValue);
     expect(wrapper.state().searchText).toBe(newValue);
   });
 });
