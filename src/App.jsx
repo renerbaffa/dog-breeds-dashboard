@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import BreedsListContainer from './containers/BreedsListContainer';
-import DogContainer from './containers/DogContainer';
+import DogContainer from './containers/DogContainer'; // eslint-disable-line
 
 import store from './store';
 
