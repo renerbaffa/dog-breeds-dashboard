@@ -8,11 +8,12 @@ import ConnectedBreedsList, {
   BreedsList,
 } from './BreedsList';
 
-import BREEDS from '../../mocks/Breeds';
+import BREEDS_MOCK from '../../mocks/Breeds';
 import normalizeBreeds from '../../normalizers/breeds';
 import { sortBreedsByFormattedName } from '../../utils/breeds';
+import { BREEDS, RETRIEVING } from '../../constants/communication';
 
-const NORMALIZED_BREEDS = normalizeBreeds(BREEDS);
+const NORMALIZED_BREEDS = normalizeBreeds(BREEDS_MOCK);
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -46,14 +47,29 @@ describe('<BreedsList />', () => {
     expect(onFetchBreeds).toHaveBeenCalled();
   });
 
-  it('should inject breeds from store into component', () => {
-    const store = mockStore({ breeds: NORMALIZED_BREEDS });
-    wrapper = shallow(<ConnectedBreedsList
-      onFetchBreeds={onFetchBreeds}
-      store={store}
-    />);
-    expect(wrapper.props().breeds)
-      .toEqual(sortBreedsByFormattedName(NORMALIZED_BREEDS));
+  describe('providing store', () => {
+    let store;
+
+    beforeEach(() => {
+      store = mockStore({
+        breeds: NORMALIZED_BREEDS,
+        communication: { [BREEDS]: RETRIEVING },
+      });
+      wrapper = shallow(<ConnectedBreedsList
+        onFetchBreeds={onFetchBreeds}
+        store={store}
+      />);
+    });
+
+    it('should inject breeds from store into component', () => {
+      expect(wrapper.props().breeds)
+        .toEqual(sortBreedsByFormattedName(NORMALIZED_BREEDS));
+    });
+
+    it('should inject loading status', () => {
+      expect(wrapper.props().isLoading)
+        .toBeTruthy();
+    });
   });
 
   it('should reach 100% of coverage', () => {
