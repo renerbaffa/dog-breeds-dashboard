@@ -5,3 +5,4 @@ export const FAILED = 'FAILED';
 
 // types
 export const BREEDS = 'BREEDS';
+export const DOG = 'DOG';
