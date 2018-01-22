@@ -7,10 +7,13 @@ import PlusButton from 'react-icons/lib/fa/plus';
 
 import Button from '../components/shared/Button';
 import Image from '../components/shared/Image';
+import Loader from '../components/template/Loader';
 
 import { formatBreedName } from '../utils/breeds';
 
 import { fetchDogImage } from '../actions/dogAction';
+
+import { DOG, RETRIEVING } from '../constants/communication';
 
 import styles from './DogContainer.css';
 
@@ -23,6 +26,7 @@ export class DogContainer extends Component {
       parentBreed: PropTypes.string,
     }),
     onFetchDogImage: PropTypes.func,
+    isLoading: PropTypes.bool,
     title: PropTypes.string,
   };
 
@@ -30,6 +34,7 @@ export class DogContainer extends Component {
     className: '',
     currentBreed: undefined,
     onFetchDogImage: () => {},
+    isLoading: false,
     title: 'Please select a breed',
   };
 
@@ -44,18 +49,34 @@ export class DogContainer extends Component {
     }
   }
 
-  updateDogImage = async (currentBreed) => {
-    const dogImage = await this.props.onFetchDogImage(currentBreed);
-    this.setState({ dogImage });
-  }
+  updateDogImage = async currentBreed =>
+    this.setState({ dogImage: undefined }, async () => {
+      const dogImage = await this.props.onFetchDogImage(currentBreed);
+      this.setState({ dogImage });
+    });
 
   render() {
-    const { className, currentBreed, title } = this.props;
+    const {
+      className,
+      currentBreed,
+      isLoading,
+      title,
+    } = this.props;
     const { dogImage } = this.state;
 
     const content = [];
 
-    if (currentBreed) {
+    if (isLoading) {
+      content.push((
+        <Loader
+          className={styles.loader}
+          key="dog-container-loader"
+          show={isLoading}
+        />
+      ));
+    }
+
+    if (currentBreed && (dogImage || dogImage === '')) {
       content.push((
         <div
           className={styles.imageContainer}
@@ -89,12 +110,13 @@ export class DogContainer extends Component {
   }
 }
 
-export function mapStateToProps({ breeds, selectedBreed }) {
+export function mapStateToProps({ breeds, communication, selectedBreed }) {
   const currentBreed = breeds.find(breed => breed.id === selectedBreed);
 
   return ({
     title: currentBreed && formatBreedName(currentBreed),
     currentBreed,
+    isLoading: communication[DOG] === RETRIEVING,
   });
 }
 

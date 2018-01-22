@@ -5,6 +5,8 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import { formatBreedName } from '../utils/breeds';
+import { DOG, RETRIEVING, RETRIEVED } from '../constants/communication';
+import Loader from '../components/template/Loader';
 
 import BREEDS_MOCK from '../mocks/Breeds';
 import normalizeBreeds from '../normalizers/breeds';
@@ -44,6 +46,9 @@ describe('<DogContainer />', () => {
       store = mockStore({
         breeds: NORMALIZED_BREEDS,
         selectedBreed: currentBreed.id,
+        communication: {
+          [DOG]: RETRIEVING,
+        },
       });
       wrapper = shallow(<ConnectDogContainer store={store} />);
     });
@@ -113,6 +118,7 @@ describe('<DogContainer />', () => {
     wrapper = shallow(<DogContainer
       currentBreed={currentBreed}
     />);
+    wrapper.setState({ dogImage: '' });
 
     expect(wrapper.find('.buttonContainer')).toHaveLength(1);
     expect(wrapper.find('.imageContainer')).toHaveLength(1);
@@ -125,6 +131,9 @@ describe('<DogContainer />', () => {
       newState = mapStateToProps({
         breeds: NORMALIZED_BREEDS,
         selectedBreed: currentBreed.id,
+        communication: {
+          [DOG]: RETRIEVING,
+        },
       });
     });
 
@@ -135,6 +144,33 @@ describe('<DogContainer />', () => {
     it('should return correct currentBreed', () => {
       expect(newState.currentBreed).toBe(currentBreed);
     });
+
+    it('should ruturn true when DOG status is RETRIEVING', () => {
+      expect(newState.isLoading).toBeTruthy();
+    });
+
+    it('should ruturn false when DOG status is not RETRIEVING', () => {
+      newState = mapStateToProps({
+        breeds: NORMALIZED_BREEDS,
+        selectedBreed: currentBreed.id,
+        communication: {
+          [DOG]: RETRIEVED,
+        },
+      });
+      expect(newState.isLoading).toBeFalsy();
+    });
+  });
+
+  describe('isLoading prop', () => {
+    it('should render loader when isLoading prop is true', () => {
+      wrapper.setProps({ isLoading: true });
+      expect(wrapper.find(Loader)).toHaveLength(1);
+    });
+
+    it('should not render loader when isLoading prop is false', () => {
+      wrapper.setProps({ isLoading: false });
+      expect(wrapper.find(Loader)).toHaveLength(0);
+    });
   });
 
   it('should reach 100% of coverage', () => {
@@ -143,6 +179,9 @@ describe('<DogContainer />', () => {
     const store = mockStore({
       breeds: NORMALIZED_BREEDS,
       selectedBreed: currentBreed.id,
+      communication: {
+        [DOG]: RETRIEVING,
+      },
     });
     // rendering connected component in order to inject information from store
     wrapper = shallow(<ConnectDogContainer store={store} />);
