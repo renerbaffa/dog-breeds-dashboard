@@ -4,6 +4,7 @@ import { fetchBreeds as sourceFetchBreeds } from '../sources/BreedsSource';
 
 export const SET_BREEDS_RETRIEVING = 'SET_BREEDS_RETRIEVING';
 export const UPDATE_BREEDS = 'UPDATE_BREEDS';
+export const UPDATE_SELECTED_BREED = 'UPDATE_SELECTED_BREED';
 
 export function setBreedsRetrieving(status) {
   return {
@@ -36,4 +37,17 @@ export function fetchBreeds() {
       dispatch(setBreedsRetrieving(FAILED));
     }
   };
+}
+
+export function updateSelectedBreed(selectedBreed) {
+  return {
+    type: UPDATE_SELECTED_BREED,
+    payload: {
+      selectedBreed,
+    },
+  };
+}
+
+export function setSelectedBreed(selectedBreed) {
+  return dispatch => dispatch(updateSelectedBreed(selectedBreed));
 }

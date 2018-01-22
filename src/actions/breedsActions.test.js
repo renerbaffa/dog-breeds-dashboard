@@ -7,8 +7,11 @@ import {
   fetchBreeds,
   SET_BREEDS_RETRIEVING,
   setBreedsRetrieving,
+  setSelectedBreed,
   UPDATE_BREEDS,
+  UPDATE_SELECTED_BREED,
   updateBreeds,
+  updateSelectedBreed,
 } from './breedsActions';
 
 import { FETCH_BREEDS } from '../sources/BreedsSource';
@@ -112,6 +115,47 @@ describe('breed actions', () => {
       return store.dispatch(fetchBreeds()).then(() => {
         expect(store.getActions()[store.getActions().length - 1].meta[BREEDS])
           .toEqual(FAILED);
+      });
+    });
+  });
+
+  describe('updateSelectedBreed', () => {
+    const selectedBreed = 'african';
+
+    beforeEach(() => {
+      action = {
+        type: UPDATE_SELECTED_BREED,
+        payload: {
+          selectedBreed,
+        },
+      };
+    });
+
+    it('should dispatch correct action type', () => {
+      expect(updateSelectedBreed(selectedBreed).type).toEqual(action.type);
+    });
+
+    it('should add correct breed in action payload', () => {
+      expect(updateSelectedBreed(selectedBreed).payload.selectedBreed)
+        .toEqual(selectedBreed);
+    });
+  });
+
+  describe('setSelectedBreed', () => {
+    let store;
+    const selectedBreed = 'african';
+
+    beforeEach(() => {
+      store = mockStore({ selectedBreed: null });
+    });
+
+    it('should dispatch correct action', () => {
+      store.dispatch(setSelectedBreed(selectedBreed));
+      expect(store.getActions()[0]).toEqual({
+        type: UPDATE_SELECTED_BREED,
+        payload: {
+          selectedBreed,
+        },
       });
     });
   });
