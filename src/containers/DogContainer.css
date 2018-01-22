@@ -1,0 +1,44 @@
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 28px;
+  padding-top: 60px;
+}
+
+.imageContainer {
+  height: calc(100% - 205px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image {
+  max-width: 600px;
+  max-height: auto;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  margin: 12px 0px;
+  height: 60px;
+}
+
+.button {
+  padding: 12px;
+}
+
+.buttonIcon {
+  margin-right: 8px;
+}
