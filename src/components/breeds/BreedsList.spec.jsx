@@ -10,6 +10,7 @@ import ConnectedBreedsList, {
 
 import BREEDS from '../../mocks/Breeds';
 import normalizeBreeds from '../../normalizers/breeds';
+import { sortBreedsByFormattedName } from '../../utils/breeds';
 
 const NORMALIZED_BREEDS = normalizeBreeds(BREEDS);
 
@@ -51,6 +52,8 @@ describe('<BreedsList />', () => {
       onFetchBreeds={onFetchBreeds}
       store={store}
     />);
+    expect(wrapper.props().breeds)
+      .toEqual(sortBreedsByFormattedName(NORMALIZED_BREEDS));
   });
 
   it('should reach 100% of coverage', () => {
