@@ -1,0 +1,8 @@
+.main {
+  background-color: white;
+  padding: 0px 18px;
+}
+
+.selected {
+  background-color: lightgray;
+}

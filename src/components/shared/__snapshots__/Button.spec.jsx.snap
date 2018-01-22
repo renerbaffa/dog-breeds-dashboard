@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should apply selected classname 1`] = `
+<button
+  className="className main selected"
+>
+  Grid
+</button>
+`;
+
+exports[`<Button /> should render correctly 1`] = `
+<button
+  className="className main"
+>
+  Grid
+</button>
+`;
