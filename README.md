@@ -39,6 +39,7 @@ npm|yarn release
 ## Features developed
 [X] View all breeds
 [X] Filter breeds
+[X] Select breed
 [] Check random dog images according to breed selected
 
 ### Automated tests
@@ -49,7 +50,7 @@ npm|yarn release
   1. `enzyme` to render and manipulate rendered React components
   2. `react-test-renderer` to generate snapshots of dumb/stateless components
   3. `axios-mock-adapter` to mock and simulate requests and HTTP responses
-- Total time spent: 21 hours (configuring webpack: ~5 hours, documenting: ~1 hour, coding: ~7 hours, testing: ~8 hours)
+- Total time spent: 23 hours (configuring webpack: ~7 hours, documenting: ~1 hour, coding: ~7 hours, testing: ~8 hours)
 
 ### Architecture details
 - `communication` redux state were created in order to store loading flags. Those flags are retrieved from meta tag inserted in the action payload (see `reducers/communication`).
