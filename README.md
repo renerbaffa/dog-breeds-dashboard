@@ -1,7 +1,7 @@
 
 # Dog Breeds Dashboard
 
-Technical assessment: Dog Breeds Web Dashbar that allows user to consult random images of dogs selected by breed
+Technical assessment: Dog Breeds Web Dashbar that allows user to consult random images of dogs selected by breed.
 
 ## Running the project
 You can use either npm or yarn to run the project and the tests
@@ -31,12 +31,14 @@ npm|yarn release
   - [X] Testing environment
   - [X] Eslint
   - [X] Postcss
+- Local data was stored in the component's state level
+- Redux was used in order to store and manage the data that is shared among the app
 - Using `react-redux` for data storage and `redux-thunk` to allow actions to return functions instead of actions
 - `redux-devtools-extension` configured to run only on dev environment
 
 ## Features developed
-[] View all breeds
-[] Filter breeds
+[X] View all breeds
+[X] Filter breeds
 [] Check random dog images according to breed selected
 
 ### Automated tests
@@ -47,9 +49,10 @@ npm|yarn release
   1. `enzyme` to render and manipulate rendered React components
   2. `react-test-renderer` to generate snapshots of dumb/stateless components
   3. `axios-mock-adapter` to mock and simulate requests and HTTP responses
-- Total time spent: 6 hours (configuring webpack: ~5 hours, documenting: ~1 hour)
+- Total time spent: 21 hours (configuring webpack: ~5 hours, documenting: ~1 hour, coding: ~7 hours, testing: ~8 hours)
 
 ### Architecture details
 - `communication` redux state were created in order to store loading flags. Those flags are retrieved from meta tag inserted in the action payload (see `reducers/communication`).
 - `normalizers` are the files responsible for get raw data and convert it to expected pattern
 - `sources` are the files responsible for request information from backend, decoupling the request code from the actions and components.
+- `adapter` concept were applied for basic components (see all components in `components/shared` folder).
