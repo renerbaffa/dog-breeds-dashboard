@@ -26,6 +26,7 @@ export class BreedsList extends Component {
     onFetchBreeds: PropTypes.func,
     onSetSelectedBreed: PropTypes.func,
     searchText: PropTypes.string, // eslint-disable-line
+    selectedBreed: PropTypes.string,
   };
 
   static defaultProps = {
@@ -34,6 +35,7 @@ export class BreedsList extends Component {
     onFetchBreeds: () => {},
     onSetSelectedBreed: () => {},
     searchText: '',
+    selectedBreed: '',
   };
 
   componentDidMount() {
@@ -41,7 +43,12 @@ export class BreedsList extends Component {
   }
 
   render() {
-    const { breeds, isLoading, onSetSelectedBreed } = this.props;
+    const {
+      breeds,
+      isLoading,
+      onSetSelectedBreed,
+      selectedBreed,
+    } = this.props;
 
     return (
       <div className={styles.container}>
@@ -50,6 +57,7 @@ export class BreedsList extends Component {
           <BreedItem
             breed={breed}
             key={`breed-${breed.id}`}
+            selected={selectedBreed === breed.id}
             onClick={() => onSetSelectedBreed(breed.id)}
           />
         ))}
@@ -58,11 +66,15 @@ export class BreedsList extends Component {
   }
 }
 
-function mapStateToProps({ breeds, communication }, { searchText }) {
+function mapStateToProps(
+  { breeds, communication, selectedBreed },
+  { searchText },
+) {
   return {
     isLoading: communication[BREEDS] === RETRIEVING,
     breeds:
       sortBreedsByFormattedName(filterByFormattedName(breeds, searchText)),
+    selectedBreed,
   };
 }
 
