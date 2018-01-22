@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  border: 1px solid gray;
+}
+
+.icon {
+  height: 60px;
+  width: 60px;
+}
+
+.text {
+  text-align: center;
+  font-size: 25px;
+}
