@@ -32,8 +32,8 @@ describe('formatBreedName util', () => {
       ];
       expect(sortBreedsByFormattedName(breeds)).toEqual([
         { name: 'african' },
-        { name: 'french', parentBreed: 'bulldog' },
         { name: 'boxer' },
+        { name: 'french', parentBreed: 'bulldog' },
       ]);
     });
   });
