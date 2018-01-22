@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BreedsList /> should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <div>
+      American (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Australian (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Bedlington (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Border (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Dandie (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Fox (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Irish (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Kerryblue (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Lakeland (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Norfolk (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Norwich (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Patterdale (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Scottish (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Sealyham (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Silky (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Tibetan (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Toy (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Westhighland (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Wheaten (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Yorkshire (Terrier)
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Vizsla
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      Weimaraner
+    </div>
+  </div>
+</div>
+`;

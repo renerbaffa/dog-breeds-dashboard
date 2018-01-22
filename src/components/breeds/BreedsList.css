@@ -1,0 +1,12 @@
+.container {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #e6e6e6;
+}
